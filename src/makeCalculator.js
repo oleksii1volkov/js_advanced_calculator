@@ -15,6 +15,10 @@ function makeCalculator() {
     },
 
     operate(operation, operand) {
+      if (typeof operation !== 'function') {
+        return this;
+      }
+
       this.result = operation(this.result, operand);
 
       return this;
